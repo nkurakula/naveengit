@@ -13,7 +13,6 @@ import com.reliant.electricityservice.dao.registration.RegistrationDAO;
 import com.reliant.electricityservice.model.registration.Customer;
 import com.reliant.electricityservice.service.jms.UtilityMessageSender;
 
-
 public class RegistrationService {
 
 	private static final Logger logger = Logger.getLogger(RegistrationService.class);
@@ -25,7 +24,7 @@ public class RegistrationService {
 	UtilityMessageSender sender;
 
 	@Transactional
-	public void saveCustomer(Customer customer) {
+	public int saveCustomer(Customer customer) {
 		int id = regDAO.saveCustomer(customer);
 
 		Customer cust = CustomerClient.getCustomerById(id);
@@ -35,6 +34,6 @@ public class RegistrationService {
 		sender.sendMessage(planList.get(1).getSId() + " " + cust.getId());
 		logger.info("Message Sent to JMS");
 		System.out.println("Message was send....***************....");
-
+		return id;
 	}
 }

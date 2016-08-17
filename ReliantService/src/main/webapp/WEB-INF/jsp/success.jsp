@@ -4,12 +4,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Sucess</title>
 </head>
 <body>
 <h1>Registration Successful</h1>
   First Name :<b>${customer.firstname}</b><br>
   Last Name :<b>${customer.lastname}</b><br>
   User Name :<b>${customer.username}</b><br>
+  Service Plan :<b>${customer.serviceId}</b><br>
 </body>
 </html>
