@@ -10,8 +10,8 @@ import java.util.List;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.bootcampjava.electricityservice.client.soap.ServicePlanClient;
-import com.bootcampjava.electricityservice.client.soap.wsimport.ServicePlan;
+import com.reliant.electricityservice.client.soap.ServicePlanClient;
+import com.reliant.electricityservice.client.soap.mavimport.ServicePlan;
 
 public class ServicePlanClientJUnit {
 
