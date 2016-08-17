@@ -35,19 +35,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ServicePlan }
-     * 
-     */
-    public ServicePlan createServicePlan() {
-        return new ServicePlan();
-    }
-
-    /**
      * Create an instance of {@link GetServicePlan }
      * 
      */
     public GetServicePlan createGetServicePlan() {
         return new GetServicePlan();
+    }
+
+    /**
+     * Create an instance of {@link ServicePlan }
+     * 
+     */
+    public ServicePlan createServicePlan() {
+        return new ServicePlan();
     }
 
     /**

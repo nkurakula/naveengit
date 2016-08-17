@@ -32,6 +32,7 @@ public class RegistrationService {
 
 		System.out.println("Before Sending the message " + 2 + " " + cust.getId());
 		sender.sendMessage(planList.get(1).getSId() + " " + cust.getId());
+		customer.setServiceId(planList.get(1).getSId());
 		logger.info("Message Sent to JMS");
 		System.out.println("Message was send....***************....");
 		return id;
