@@ -221,12 +221,8 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<!-- <sourceDirectory>src</sourceDirectory>
-		<resources>
-			<resource>
-				<directory>src/main/webapp</directory>
-			</resource>
-		</resources>-->
+		<!-- <sourceDirectory>src</sourceDirectory> <resources> <resource> <directory>src/main/webapp</directory> 
+			</resource> </resources> -->
 		<plugins>
 			<plugin>
 				<groupId>org.apache.cxf</groupId>
@@ -268,20 +264,23 @@
 					</dependency>
 				</dependencies>
 			</plugin>
-			<!-- <plugin>
-				<artifactId>maven-war-plugin</artifactId>
-				<version>2.6</version>
-				<configuration>
-					<warSourceDirectory>WebContent</warSourceDirectory>
-					<failOnMissingWebXml>false</failOnMissingWebXml>
-				</configuration>
-			</plugin> -->
+			<!-- <plugin> <artifactId>maven-war-plugin</artifactId> <version>2.6</version> 
+				<configuration> <warSourceDirectory>WebContent</warSourceDirectory> <failOnMissingWebXml>false</failOnMissingWebXml> 
+				</configuration> </plugin> -->
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.3</version>
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.2.1</version>
+				<configuration>
+					<mainClass>org.test.int1.Main</mainClass>
 				</configuration>
 			</plugin>
 		</plugins>

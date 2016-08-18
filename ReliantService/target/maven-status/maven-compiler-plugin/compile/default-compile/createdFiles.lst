@@ -1,4 +1,3 @@
-com\reliant\electricityservice\service\jms\JmsSender.class
 com\reliant\electricityservice\client\soap\mavimport\GetServicePlanResponse.class
 com\reliant\electricityservice\model\registration\ServicePlan.class
 com\reliant\electricityservice\client\soap\mavimport\UtilityPlanServiceImplService.class
