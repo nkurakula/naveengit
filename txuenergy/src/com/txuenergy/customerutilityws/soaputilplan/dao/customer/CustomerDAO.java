@@ -10,6 +10,11 @@ import com.txuenergy.customerutilityws.soaputilplan.util.DBUtil;
 
 public class CustomerDAO {
 	
+	/**
+	 * Returns the customerInfo from the database based on Id
+	 * @param id
+	 * @return
+	 */
 	public static Customer getCustomerInfo(int id){
 		
 		Connection con = DBUtil.getConnection();
@@ -38,7 +43,6 @@ public class CustomerDAO {
 				try {
 					con.close();
 				} catch (SQLException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}
@@ -46,13 +50,16 @@ public class CustomerDAO {
 		
 		return cust;
 	}
-
+	
+	/**
+	 * Updates the Customer table to get the data with serviceId
+	 * @param cid
+	 * @param sId
+	 */
 	public static void updateCustomerDetails(int cid, int sId) {
 		
-		Connection con = DBUtil.getConnection();
-		
-
-		
+		Connection con = DBUtil.getDataSourceConnection();
+			
 		try {
 			Statement stmt=con.createStatement();
 			int rs = stmt.executeUpdate("update customer set serviceId="+sId+" where cid="+cid);

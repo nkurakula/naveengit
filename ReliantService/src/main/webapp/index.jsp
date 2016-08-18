@@ -1,121 +1,109 @@
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 
 <head>
-
-<style>
-@CHARSET "ISO-8859-1";
-
-body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form,
-	fieldset, input, textarea, p, blockquote, th, td {
-	padding: 0;
-	margin: 0;
-}
-
-ol, ul, li {
-	list-style: none
-}
-
-body, input, textarea, select {
-	font-family: 'Open Sans', sans-serif;
-	font-size: 16px;
-	color: #4c4c4c;
-}
-
-h1 {
-	font-size: 32px;
-	font-weight: 300;
-	color: #4c4c4c;
-	text-align: center;
-	padding-top: 10px;
-	margin-bottom: 10px;
-}
-
-html {
-	background-color: #ffffff;
-}
-
-.testbox {
-	margin: 20px auto;
-	width: 343px;
-	height: 464px;
-	-webkit-border-radius: 8px/7px;
-	-moz-border-radius: 8px/7px;
-	border-radius: 8px/7px;
-	background-color: #ebebeb;
-	-webkit-box-shadow: 1px 2px 5px rgba(0, 0, 0, .31);
-	-moz-box-shadow: 1px 2px 5px rgba(0, 0, 0, .31);
-	box-shadow: 1px 2px 5px rgba(0, 0, 0, .31);
-	border: solid 1px #cbc9c9;
-}
-
-form {
-	margin: 0 30px;
-}
-
-input[type=radio]:checked+label:after {
-	opacity: 1;
-}
-
-hr {
-	color: #a9a9a9;
-	opacity: 0.3;
-}
-
-input[type=text], input[type=password] {
-	width: 300px;
-	height: 39px;
-	-webkit-border-radius: 0px 4px 4px 0px/5px 5px 4px 4px;
-	-moz-border-radius: 0px 4px 4px 0px/0px 0px 4px 4px;
-	border-radius: 0px 4px 4px 0px/5px 5px 4px 4px;
-	background-color: #fff;
-	-webkit-box-shadow: 1px 2px 5px rgba(0, 0, 0, .09);
-	-moz-box-shadow: 1px 2px 5px rgba(0, 0, 0, .09);
-	box-shadow: 1px 2px 5px rgba(0, 0, 0, .09);
-	border: solid 1px #cbc9c9;
-	margin-left: -5px;
-	margin-top: 13px;
-	padding-left: 10px;
-}
-
-input[type=password] {
-	margin-bottom: 15px;
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Customer Information</title>
+<!-- Bootstrap CSS -->
+<%-- <link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet"> --%>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<style type="text/css">
+.myrow-container {
+	margin: 20px;
 }
 </style>
-<link
-	href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600'
-	rel='stylesheet' type='text/css'>
-<link
-	href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css"
-	rel="stylesheet">
-
-<link rel="stylesheet"
-	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 </head>
+<body class=".container-fluid">
+	<div class="container myrow-container">
+		<div class="panel panel-success" style="width:40%">
+			<div class="panel-heading">
+				<h3 class="panel-title">Customer Details</h3>
+			</div>
+			<div class="panel-body" >
+				<form action="registration" method="post">
 
-<title>Electricity Service</title>
-</head>
+					<div class="form-group">
+						<div class="control-label">
+							<label>First Name</label>
+						</div>
+						<div>
 
-<body>
-	<div class="testbox" style="height: 415px">
-		<h1>Registration</h1>
-		<form action="registration" method="post">
-			<hr>
-			<input type="text" name="firstname" id="name" placeholder="First Name" required /> 
-			<input type="text" name="lastname" id="name" placeholder="Last Name" required /> 
-			<input type="text" name="username" id="name" placeholder="User Name" required />
-			<input type="text" name="email" id="name" placeholder="Email" required /> 
-			<input type="text" name="telephone" id="name" placeholder="Telephone" required />
-			<input type="password" name="password" id="name" placeholder="Password" required /> <br>
-			<br>
+							<input cssClass="form-control" type="text" name="firstname" placeholder="First Name"
+								required />
+						</div>
+					</div>
 
-			<button class="btn btn-info pull-left" type="submit"
-				name="register" value="register">Register</button>
-		</form>
+					<div class="form-group">
+						<div class="control-label">
+							<label>Last Name</label>
+						</div>
+						<div>
+							<input cssClass="form-control" type="text" name="lastname"
+								placeholder="Last Name" required />
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="control-label">
+							<label>Email</label>
+						</div>
+						<div>
+							<input cssClass="form-control" type="email" name="email"
+								placeholder="Email" required />
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="control-label">
+							<label>Telephone</label>
+						</div>
+						<div>
+							<input cssClass="form-control" type="number" name="telephone"
+								placeholder="Telephone" required />
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="control-label">
+							<label>Username</label>
+						</div>
+						<div>
+							<input cssClass="form-control" type="text" name="username"
+								placeholder="Username" required />
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="control-label">
+							<label>Password</label>
+						</div>
+						<div>
+							<input cssClass="form-control" type="password" name="password"
+								placeholder="Password" required />
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<div class="row">
+							<div style="margin-left:30%">
+								<button type="submit" name="register" value="register"
+									id="saveCustomer" class="btn btn-primary">Register </button>
+							</div>
+						</div>
+					</div>
+
+				</form>
+			</div>
+		</div>
 	</div>
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script
-		src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-</body>
 
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+</body>
 </html>

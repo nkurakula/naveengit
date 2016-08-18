@@ -35,6 +35,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetServicePlanResponse }
+     * 
+     */
+    public GetServicePlanResponse createGetServicePlanResponse() {
+        return new GetServicePlanResponse();
+    }
+
+    /**
      * Create an instance of {@link GetServicePlan }
      * 
      */
@@ -48,14 +56,6 @@ public class ObjectFactory {
      */
     public ServicePlan createServicePlan() {
         return new ServicePlan();
-    }
-
-    /**
-     * Create an instance of {@link GetServicePlanResponse }
-     * 
-     */
-    public GetServicePlanResponse createGetServicePlanResponse() {
-        return new GetServicePlanResponse();
     }
 
     /**

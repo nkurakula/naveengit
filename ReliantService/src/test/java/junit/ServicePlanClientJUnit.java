@@ -3,26 +3,18 @@ package junit;
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
-
 import java.util.Arrays;
 import java.util.List;
-
-import org.junit.BeforeClass;
 import org.junit.Test;
-
 import com.reliant.electricityservice.client.soap.ServicePlanClient;
 import com.reliant.electricityservice.client.soap.mavimport.ServicePlan;
 
 public class ServicePlanClientJUnit {
 
-	private static ServicePlanClient mockedClient;
-	private static ServicePlan plan1;
-	private static ServicePlan plan2;
-
-	@BeforeClass
-	public static void setUp() {
-
-		mockedClient = mock(ServicePlanClient.class);
+	@Test
+	public void testGetPlans() {
+		
+		ServicePlanClient mockedClient = mock(ServicePlanClient.class);
 
 		ServicePlan plan1 = new ServicePlan();
 		plan1.setSId(1);
@@ -35,11 +27,6 @@ public class ServicePlanClientJUnit {
 		plan2.setSAmount(30);
 
 		when(mockedClient.getPlanList()).thenReturn(Arrays.asList(plan1, plan2));
-
-	}
-
-	@Test
-	public void testGetPlans() {
 
 		List<ServicePlan> planList = mockedClient.getPlanList();
 

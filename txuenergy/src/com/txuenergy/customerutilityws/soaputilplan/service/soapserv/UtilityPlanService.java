@@ -9,6 +9,10 @@ import javax.jws.soap.SOAPBinding.Style;
 
 import com.txuenergy.customerutilityws.soaputilplan.entity.electricity.ServicePlan;
 
+/**
+ * @author Bootcamp User 017
+ * Exposes methods as webservice to get service plans
+ */
 @WebService
 @SOAPBinding(style = Style.DOCUMENT)
 public interface UtilityPlanService {

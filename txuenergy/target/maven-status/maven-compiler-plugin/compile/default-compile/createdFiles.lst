@@ -1,0 +1,10 @@
+com\txuenergy\customerutilityws\soaputilplan\dao\customer\CustomerDAO.class
+com\txuenergy\customerutilityws\soaputilplan\service\soapserv\UtilityPlanService.class
+com\txuenergy\customerutilityws\soaputilplan\util\PropertiesHandler.class
+com\txuenergy\customerutilityws\soaputilplan\entity\customer\Customer.class
+com\txuenergy\customerutilityws\soaputilplan\service\restserv\CustomerService.class
+com\txuenergy\customerutilityws\soaputilplan\service\soapserv\UtilityPlanServiceImpl.class
+com\txuenergy\customerutilityws\soaputilplan\dao\electricity\ServiceDAO.class
+com\txuenergy\customerutilityws\soaputilplan\entity\electricity\ServicePlan.class
+com\txuenergy\customerutilityws\soaputilplan\service\jmsserv\UtilityMessageListner.class
+com\txuenergy\customerutilityws\soaputilplan\util\DBUtil.class

@@ -8,9 +8,16 @@ import org.springframework.stereotype.Service;
 
 import com.txuenergy.customerutilityws.soaputilplan.dao.customer.CustomerDAO;
 
+/**
+ * @author Bootcamp User 017
+ * ListenerClass to listen to ActiveMQ queue
+ */
 @Service
 public class UtilityMessageListner implements MessageListener {
-
+	
+	/**
+	 * Sends the customer Id and Service Id to database once the messaage is received
+	 */
 	@Override
 	public void onMessage(Message m) {
 

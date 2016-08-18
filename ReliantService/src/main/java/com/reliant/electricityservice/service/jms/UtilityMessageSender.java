@@ -9,6 +9,10 @@ import org.springframework.jms.core.MessageCreator;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
+/**
+ * @author Bootcamp User 017
+ * Process the message to the ActiveMQ queue
+ */
 @Service
 public class UtilityMessageSender {
 	
@@ -16,7 +20,11 @@ public class UtilityMessageSender {
 	@Autowired
 	private JmsTemplate jmsTemplate;	
 	
-	public void sendMessage(final String message) {
+	/**
+	 * Sends the message to the queue
+	 * @param message
+	 */
+	public void sendMessage(final String message) throws JMSException {
 		
 	    jmsTemplate.send(new MessageCreator(){  
 
