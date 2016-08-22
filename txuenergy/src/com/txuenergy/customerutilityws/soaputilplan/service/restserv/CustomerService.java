@@ -24,7 +24,7 @@ public class CustomerService {
 	@Path("{id}")
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public static Customer getServicePlan(@PathParam("id") int id) {
+	public static Customer getCustomerInfo(@PathParam("id") int id) {
 		
 		Customer cust = CustomerDAO.getCustomerInfo(id);
 

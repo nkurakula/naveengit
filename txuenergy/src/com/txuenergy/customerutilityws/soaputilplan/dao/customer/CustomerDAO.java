@@ -9,37 +9,37 @@ import com.txuenergy.customerutilityws.soaputilplan.entity.customer.Customer;
 import com.txuenergy.customerutilityws.soaputilplan.util.DBUtil;
 
 public class CustomerDAO {
-	
+
 	/**
 	 * Returns the customerInfo from the database based on Id
+	 * 
 	 * @param id
 	 * @return
 	 */
-	public static Customer getCustomerInfo(int id){
-		
+	public static Customer getCustomerInfo(int id) {
+
 		Connection con = DBUtil.getConnection();
-		Customer cust =  new Customer();
-		
-		if(con!=null){
-			
+		Customer cust = new Customer();
+
+		if (con != null) {
+
 			try {
-				Statement stmt=con.createStatement();
-				ResultSet rs = stmt.executeQuery("select * from customer where cid="+id);
-				
-				while(rs.next()){
-					
+				Statement stmt = con.createStatement();
+				ResultSet rs = stmt.executeQuery("select * from customer where cid=" + id);
+
+				while (rs.next()) {
+
 					cust.setId(rs.getInt(1));
 					cust.setFirstname(rs.getString(2));
 					cust.setLastname(rs.getString(3));
 					cust.setEmail(rs.getString(4));
 					cust.setTelephone(rs.getString(7));
-					
+
 				}
-				
+
 			} catch (SQLException e) {
 				e.printStackTrace();
-			}  
-			finally{
+			} finally {
 				try {
 					con.close();
 				} catch (SQLException e) {
@@ -47,27 +47,27 @@ public class CustomerDAO {
 				}
 			}
 		}
-		
+
 		return cust;
 	}
-	
+
 	/**
 	 * Updates the Customer table to get the data with serviceId
+	 * 
 	 * @param cid
 	 * @param sId
 	 */
 	public static void updateCustomerDetails(int cid, int sId) {
-		
+
 		Connection con = DBUtil.getDataSourceConnection();
-			
+
 		try {
-			Statement stmt=con.createStatement();
-			int rs = stmt.executeUpdate("update customer set serviceId="+sId+" where cid="+cid);
-			
+			Statement stmt = con.createStatement();
+			int rs = stmt.executeUpdate("update customer set serviceId=" + sId + " where cid=" + cid);
+
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}  
-		finally{
+		} finally {
 			try {
 				con.close();
 			} catch (SQLException e) {
@@ -75,7 +75,7 @@ public class CustomerDAO {
 				e.printStackTrace();
 			}
 		}
-	
+
 	}
-	
+
 }
