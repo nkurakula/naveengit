@@ -16,10 +16,6 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import org.codehaus.jettison.json.JSONException;
-import org.codehaus.jettison.json.JSONObject;
-
-import com.assurance.dmvacessor.driverinfogeneration.model.Address;
-import com.google.gson.Gson;
 
 @Path("/getvehicles")
 public class RestClient {
@@ -28,20 +24,21 @@ public class RestClient {
 	@POST
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response getVehiclesList(String address) throws JSONException {		
-		
+	public Response getVehiclesList(String address) throws JSONException {
+
 		RestClient rc = new RestClient();
+		System.out.println("Inside restclient before public records call"+address);
 		String vehicleListJson = rc.getVehicleList(address);
-		System.out.println("vehicle LIst "+vehicleListJson);
-		return Response.status(201).entity(vehicleListJson).build();
+		System.out.println("vehicle LIst " + vehicleListJson);
+		return Response.status(200).entity(vehicleListJson).build();
 	}
 
 	public String getVehicleList(String address) {
-		
+
 		String output = null;
-		
-		try {			
-			
+
+		try {
+
 			URL url = new URL("http://localhost:8080/DMVPublicRecords/getvehicleslist");
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 			conn.setDoOutput(true);
@@ -58,7 +55,6 @@ public class RestClient {
 
 			BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
 
-			
 			System.out.println("Output from Server .... \n");
 			while ((output = br.readLine()) != null) {
 				return output;
